@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "awesome-sim"
+version = "1.0.0"
+description = "A tiny, FAIR 2D heat-diffusion reference simulation for the NFDI4ING RDM Basics lecture series."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [
+    { name = "Vasiliy Seibert", email = "vasiliy.seibert@tu-clausthal.de" },
+]
+maintainers = [
+    { name = "Vasiliy Seibert", email = "vasiliy.seibert@tu-clausthal.de" },
+]
+keywords = [
+    "research-software",
+    "FAIR4RS",
+    "heat-equation",
+    "finite-difference",
+    "nfdi4ing",
+    "teaching",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Education",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+
+dependencies = [
+    "numpy>=1.26,<3.0",
+    "matplotlib>=3.8,<4.0",
+    "pillow>=10.0,<12.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<9.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/VasiliySeibert/awesome-sim"
+Repository = "https://github.com/VasiliySeibert/awesome-sim"
+Issues = "https://github.com/VasiliySeibert/awesome-sim/issues"
+Changelog = "https://github.com/VasiliySeibert/awesome-sim/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+title: "awesome-sim: a tiny FAIR 2D heat-diffusion reference simulation"
+abstract: >-
+  awesome-sim is a minimal, deliberately tiny 2D heat-equation solver written
+  in Python/NumPy. It exists as the running example for NFDI4ING RDM Basics
+  Lecture 4 (Research Software), demonstrating how the FAIR4RS principles are
+  realised in concrete repository artefacts (persistent identifier, license,
+  qualified metadata, pinned dependencies, tests, CI).
+type: software
+authors:
+  - family-names: Seibert
+    given-names: Vasiliy
+    orcid: "https://orcid.org/0000-0002-7121-6816"
+    email: vasiliy.seibert@tu-clausthal.de
+    affiliation: "TU Clausthal"
+version: "1.0.0"
+date-released: "2026-04-20"
+license: MIT
+repository-code: "https://github.com/VasiliySeibert/awesome-sim"
+url: "https://github.com/VasiliySeibert/awesome-sim"
+keywords:
+  - research software
+  - FAIR4RS
+  - heat equation
+  - finite difference
+  - NFDI4ING
+  - teaching
+identifiers:
+  - type: url
+    value: "https://github.com/VasiliySeibert/awesome-sim"
+    description: "The GitHub repository URL (stable landing page)."
+  # After enabling the GitHub ↔ Zenodo integration and creating a release for
+  # tag v1.0.0, replace the placeholder below with the real Zenodo DOI, e.g.:
+  #   - type: doi
+  #     value: "10.5281/zenodo.XXXXXXX"
+  #     description: "Concept DOI for all versions of awesome-sim (Zenodo)."
+  #   - type: doi
+  #     value: "10.5281/zenodo.YYYYYYY"
+  #     description: "Version DOI for v1.0.0 (Zenodo)."
+references:
+  - type: software
+    title: NumPy
+    authors:
+      - name: "NumPy developers"
+    url: "https://numpy.org/"
+    notes: "Used for vectorised array computation."
+  - type: software
+    title: Matplotlib
+    authors:
+      - name: "Matplotlib developers"
+    url: "https://matplotlib.org/"
+    notes: "Used for heatmap and animation rendering."
