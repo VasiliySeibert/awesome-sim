@@ -1,7 +1,11 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
-  "identifier": "awesome-sim",
+  "identifier": [
+    "awesome-sim",
+    "https://doi.org/10.5281/zenodo.19677548",
+    "https://doi.org/10.5281/zenodo.19677552"
+  ],
   "name": "awesome-sim",
   "description": "A tiny, FAIR 2D heat-diffusion reference simulation built as the running example for NFDI4ING RDM Basics Lecture 4 (Research Software). Demonstrates how the FAIR4RS principles map to concrete repository artefacts.",
   "version": "1.1.0",
@@ -10,6 +14,8 @@
   "license": "https://spdx.org/licenses/MIT",
   "codeRepository": "https://github.com/VasiliySeibert/awesome-sim",
   "url": "https://github.com/VasiliySeibert/awesome-sim",
+  "downloadUrl": "https://zenodo.org/records/19677552",
+  "releaseNotes": "https://github.com/VasiliySeibert/awesome-sim/blob/main/CHANGELOG.md#110---2026-04-21",
   "issueTracker": "https://github.com/VasiliySeibert/awesome-sim/issues",
   "programmingLanguage": [
     {

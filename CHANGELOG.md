@@ -4,6 +4,13 @@ All notable changes to this project are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- Zenodo DOIs recorded in `CITATION.cff`, `codemeta.json`, and README badge.
+  Concept DOI: `10.5281/zenodo.19677548`. Version DOIs: v1.0.0
+  `10.5281/zenodo.19677549`, v1.1.0 `10.5281/zenodo.19677552`.
+
 ## [1.1.0] - 2026-04-21
 
 ### Added

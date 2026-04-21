@@ -30,14 +30,15 @@ identifiers:
   - type: url
     value: "https://github.com/VasiliySeibert/awesome-sim"
     description: "The GitHub repository URL (stable landing page)."
-  # After enabling the GitHub ↔ Zenodo integration and creating a release for
-  # tag v1.0.0, replace the placeholder below with the real Zenodo DOI, e.g.:
-  #   - type: doi
-  #     value: "10.5281/zenodo.XXXXXXX"
-  #     description: "Concept DOI for all versions of awesome-sim (Zenodo)."
-  #   - type: doi
-  #     value: "10.5281/zenodo.YYYYYYY"
-  #     description: "Version DOI for v1.0.0 (Zenodo)."
+  - type: doi
+    value: "10.5281/zenodo.19677548"
+    description: "Concept DOI for all versions of awesome-sim (Zenodo)."
+  - type: doi
+    value: "10.5281/zenodo.19677552"
+    description: "Version DOI for v1.1.0 (Zenodo)."
+  - type: doi
+    value: "10.5281/zenodo.19677549"
+    description: "Version DOI for v1.0.0 (Zenodo)."
 references:
   - type: software
     title: NumPy

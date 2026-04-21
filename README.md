@@ -3,6 +3,7 @@
 [![CI](https://github.com/VasiliySeibert/awesome-sim/actions/workflows/ci.yml/badge.svg)](https://github.com/VasiliySeibert/awesome-sim/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![Python: 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19677548.svg)](https://doi.org/10.5281/zenodo.19677548)
 
 > A tiny, deliberately small, **FAIR** 2D heat-diffusion simulation —
 > the running example for
@@ -156,7 +157,7 @@ and off-by-one errors in the stencil.
 
 | Principle | Evidence here |
 |-----------|---------------|
-| **F1 / F1.2** persistent identifier, version IDs | git tags `v0.1.0`, `v1.0.0`; Zenodo DOIs once the GitHub↔Zenodo integration is enabled |
+| **F1 / F1.1 / F1.2** PID, component IDs, version IDs | concept DOI [10.5281/zenodo.19677548](https://doi.org/10.5281/zenodo.19677548); version DOIs for [v1.1.0](https://doi.org/10.5281/zenodo.19677552) and [v1.0.0](https://doi.org/10.5281/zenodo.19677549); git tags `v0.1.0`, `v1.0.0`, `v1.1.0` |
 | **F2 / F3 / F4** rich, discoverable metadata | [`CITATION.cff`](./CITATION.cff), [`codemeta.json`](./codemeta.json), `pyproject.toml`, this README |
 | **A1 / A1.1** open retrieval | public GitHub over HTTPS, `pip install git+…` |
 | **A1.2** auth where needed | only for private forks (PAT); this repo is public |
@@ -192,8 +193,19 @@ awesome-sim/
 ## Citing this software
 
 See [`CITATION.cff`](./CITATION.cff) — GitHub renders a "Cite this
-repository" button on the sidebar that reads this file. Once the Zenodo
-deposit exists, the file includes the version DOI as well.
+repository" button on the sidebar that reads this file.
+
+Each release is archived on Zenodo:
+
+| Level                | DOI                                                                                            |
+|----------------------|------------------------------------------------------------------------------------------------|
+| **Concept** (all versions) | [10.5281/zenodo.19677548](https://doi.org/10.5281/zenodo.19677548) — resolves to the latest |
+| v1.1.0               | [10.5281/zenodo.19677552](https://doi.org/10.5281/zenodo.19677552)                             |
+| v1.0.0               | [10.5281/zenodo.19677549](https://doi.org/10.5281/zenodo.19677549)                             |
+
+The **concept DOI** (F1.1) identifies the project across all versions; the
+**version DOIs** (F1.2) identify specific snapshots. Citing a paper that used
+this software? Use the version DOI of the exact version you ran.
 
 ## License
 
