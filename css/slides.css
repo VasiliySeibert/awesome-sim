@@ -330,6 +330,74 @@
 .reveal .muted { color: var(--n4i-grey-500); }
 .reveal .yellow-hl { background: var(--n4i-yellow); padding: 0 4px; color: var(--n4i-navy); }
 
+/* ---------- Principle-explainer slide ---------- */
+.reveal .principle-quote {
+  background: #FFFCE6;
+  border-left: 6px solid var(--n4i-yellow);
+  padding: 14px 20px;
+  font-family: var(--font-sans);
+  font-size: 1.02em;
+  line-height: 1.4;
+  color: var(--n4i-navy);
+  margin: 0 0 12px 0;
+  border-radius: 0 4px 4px 0;
+}
+.reveal .principle-quote .label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: var(--n4i-blue);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+.reveal .principle-quote q::before,
+.reveal .principle-quote q::after { content: ""; }
+.reveal .principle-quote q {
+  display: block;
+  font-weight: 500;
+  color: var(--n4i-navy);
+}
+.reveal p.gloss {
+  font-size: .88em;
+  color: var(--n4i-ink);
+  margin: 6px 0 14px 0;
+  line-height: 1.45;
+}
+.reveal p.gloss::before {
+  content: "Plain English · ";
+  font-family: var(--font-mono);
+  font-size: .75em;
+  letter-spacing: .08em;
+  color: var(--n4i-grey-500);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.reveal ul.subs { margin-top: 8px; }
+.reveal ul.subs > li { font-size: .88em; margin: .2em 0; }
+.reveal ul.check > li { font-size: .88em; padding-left: 1.4em; }
+.reveal ul.check > li::before {
+  content: "✓";
+  background: transparent;
+  border-left: none;
+  color: var(--n4i-blue);
+  font-weight: 700;
+  font-size: 1em;
+  width: auto;
+  height: auto;
+  top: -.05em;
+}
+.reveal .mapping-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  color: var(--n4i-pink);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
 /* KaTeX tweaks */
 .reveal .katex { font-size: 1.05em; }
 .reveal .katex-display { margin: .6em 0; }

@@ -39,7 +39,7 @@
 
 .reveal .slides > section,
 .reveal .slides > section > section {
-  padding: 48px 72px;
+  padding: 64px 72px 78px 72px;
   height: 100%;
   box-sizing: border-box;
 }
@@ -161,11 +161,23 @@
   letter-spacing: .06em;
 }
 .reveal .slide-footer {
-  bottom: 20px;
+  bottom: 22px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 14px;
+  padding-top: 10px;
+  border-top: 1px solid var(--n4i-grey-200);
   color: var(--n4i-grey-500);
+}
+.reveal .slide-footer > span { display: inline-flex; align-items: center; }
+.reveal .slide-footer > span + span::before {
+  content: "";
+  display: inline-block;
+  width: 4px; height: 4px;
+  background: var(--n4i-grey-200);
+  border-radius: 50%;
+  margin-right: 14px;
 }
 .reveal .slide-footer .fair {
   color: var(--n4i-blue);
@@ -173,15 +185,20 @@
   letter-spacing: .05em;
 }
 
-/* Slide number override (bottom-right small pill) */
+/* Slide number — bottom-right. Arrows live on viewport edges (controlsLayout: 'edges'). */
 .reveal .slide-number {
   background: transparent;
   color: var(--n4i-grey-500);
   font-family: var(--font-mono);
   font-size: 11px;
-  right: 18px;
-  bottom: 14px;
+  right: 20px;
+  bottom: 18px;
 }
+
+/* Reveal navigation arrows — tint to brand blue */
+.reveal .controls { color: var(--n4i-blue); }
+.reveal .controls button.enabled { opacity: .5; }
+.reveal .controls button.enabled:hover { opacity: 1; }
 
 /* ---------- Title slide ---------- */
 
