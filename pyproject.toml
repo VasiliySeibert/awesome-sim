@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "awesome-sim"
-version = "1.0.0"
+version = "1.1.0"
 description = "A tiny, FAIR 2D heat-diffusion reference simulation for the NFDI4ING RDM Basics lecture series."
 readme = "README.md"
 license = { text = "MIT" }

@@ -14,8 +14,8 @@ authors:
     orcid: "https://orcid.org/0000-0002-7121-6816"
     email: vasiliy.seibert@tu-clausthal.de
     affiliation: "TU Clausthal"
-version: "1.0.0"
-date-released: "2026-04-20"
+version: "1.1.0"
+date-released: "2026-04-21"
 license: MIT
 repository-code: "https://github.com/VasiliySeibert/awesome-sim"
 url: "https://github.com/VasiliySeibert/awesome-sim"

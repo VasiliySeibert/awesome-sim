@@ -15,7 +15,7 @@ Euler steps (~1-2 minutes on a laptop), and writes three figures to `out/`:
 ### Run it
 
 ```bash
-pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.0.0"
+pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"
 python examples/minimal_example.py
 ```
 

@@ -4,7 +4,7 @@
   "identifier": "awesome-sim",
   "name": "awesome-sim",
   "description": "A tiny, FAIR 2D heat-diffusion reference simulation built as the running example for NFDI4ING RDM Basics Lecture 4 (Research Software). Demonstrates how the FAIR4RS principles map to concrete repository artefacts.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "dateCreated": "2026-04-20",
   "datePublished": "2026-04-20",
   "license": "https://spdx.org/licenses/MIT",

@@ -21,7 +21,7 @@ animation, a 4-panel snapshot grid, and an energy-decay plot.
 From a git tag (the path we use in the lecture's Practical 3):
 
 ```bash
-pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.0.0"
+pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"
 ```
 
 From a local clone (for development):

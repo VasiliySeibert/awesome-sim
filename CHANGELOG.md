@@ -4,7 +4,7 @@ All notable changes to this project are documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.1.0] - 2026-04-21
 
 ### Added
 - README section explaining the mathematical model (2D heat equation,
@@ -12,6 +12,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   stability, energy monotonicity) with rendered LaTeX via GitHub math.
 - `docs/snapshots.png` hero image and `docs/generate_hero_image.py` that
   reproduces it.
+
+### Notes
+- This is the version pinned by Practical 3 of the RDM Basics Lecture 4.
+  Install with:
+  `pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"`.
+- First release archived on Zenodo via the GitHub ↔ Zenodo integration.
 
 ## [1.0.0] - 2026-04-20
 
