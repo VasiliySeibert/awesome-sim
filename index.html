@@ -25,13 +25,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 
-  <!-- Theme -->
-  <link rel="stylesheet" href="css/nfdi4ing-theme.css">
-  <link rel="stylesheet" href="css/slides.css">
+  <!-- Theme (version-tagged to beat the GH Pages / browser cache) -->
+  <link rel="stylesheet" href="css/nfdi4ing-theme.css?v=3">
+  <link rel="stylesheet" href="css/slides.css?v=3">
+
+  <!-- Baseline styles for the nav overlay.
+       Placed inline so the panel is hidden off-screen even before the
+       main theme CSS has loaded (prevents an unstyled block flashing
+       at the top of the page on cold load or stale cache). -->
+  <style>
+    #nav-toggle { position: fixed; top: 18px; right: 18px; z-index: 200;
+      width: 42px; height: 42px; background: #0C113D; color: #fff;
+      border: none; border-radius: 4px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; }
+    #nav-toggle svg { width: 20px; height: 20px; }
+    #nav-overlay { position: fixed; inset: 0; z-index: 190;
+      background: rgba(12,17,61,.7); opacity: 0; pointer-events: none;
+      transition: opacity .2s ease; }
+    #nav-overlay.open { opacity: 1; pointer-events: auto; }
+    #nav-panel { position: fixed; top: 0; right: 0; bottom: 0;
+      width: min(620px, 100vw); background: #fff; z-index: 195;
+      overflow-y: auto; transform: translateX(100%);
+      transition: transform .25s ease; }
+    #nav-panel.open { transform: translateX(0); }
+  </style>
 </head>
 <body>
 
-<!-- Navigation toggle + overlay (outside Reveal so z-index is simple) -->
+<!-- Navigation toggle + overlay. Baseline off-screen styling lives in
+     the <style> block in <head> so the panel stays hidden even before
+     the theme CSS has loaded. -->
 <button id="nav-toggle" aria-label="Open agenda menu (press M)" title="Agenda (M)">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
     <line x1="4" y1="7"  x2="20" y2="7"/>
