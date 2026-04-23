@@ -512,6 +512,11 @@
   font-size: 1.15em; max-width: 40ch; font-weight: 300;
   margin-top: 8px;
 }
+.reveal section.divider .lede em {
+  color: var(--n4i-yellow);
+  font-style: normal;
+  font-weight: 500;
+}
 .reveal section.divider .fair-badges {
   display: flex; gap: 10px; margin-top: 34px;
 }
