@@ -312,10 +312,13 @@
         <div class="col">
           <h3>How you get one · live demo</h3>
           <ol>
-            <li>Enable the GitHub ↔ Zenodo integration on your repo (one toggle).</li>
+            <li>On <a href="https://zenodo.org/account/settings/github/">zenodo.org/account/settings/github/</a>, flip the switch next to your repository — that enables the GitHub ↔ Zenodo webhook.</li>
             <li>Push a git tag (e.g. <code>v1.1.0</code>) and create a GitHub <strong>release</strong>.</li>
-            <li>Zenodo webhooks the release, mints a DOI, archives a zip of the commit.</li>
+            <li>Zenodo receives the webhook, mints a DOI, archives a zip of the commit.</li>
           </ol>
+          <div class="tags">
+            <a href="https://zenodo.org/account/settings/github/" class="chip-link zen">zenodo.org · GitHub settings</a>
+          </div>
           <div class="artefact mt">
             <div class="file-head"><span>git → GitHub → Zenodo</span><span class="dots">• • •</span></div>
             <pre><code class="language-bash">git tag -a v1.1.0 -m "Release 1.1.0"
