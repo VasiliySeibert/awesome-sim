@@ -161,34 +161,57 @@
       <div class="slide-footer"><span class="fair">NFDI4ING · RDM Basics 4</span><span>90 min · ~50 slides</span></div>
     </section>
 
-    <!-- 0.4 · Software is not just another dataset -->
+    <!-- 0.4 · Why FAIR4RS — motivation -->
     <section class="content">
       <div class="slide-header"><span class="brand">Opening</span><span class="chip">0 · Why FAIR4RS?</span></div>
-      <h1>Software is not just another dataset</h1>
+      <h1>Why make research software FAIR?</h1>
 
-      <div class="two-col mt">
+      <img src="assets/img/fair4rs-rda-header.png" alt="FAIR Principles for Research Software (FAIR4RS Principles) — RDA Recommendation" style="max-height: 90px; margin: 0 0 18px 0;">
+
+      <div class="two-col wide-right">
         <div class="col">
-          <h3>Data · static</h3>
-          <ul>
-            <li>A CSV or HDF5 <em>is</em> what it is — bytes at rest.</li>
-            <li>Versions are usually linear snapshots.</li>
-            <li>Immutability is a feature.</li>
-            <li>FAIR describes it with metadata, done.</li>
-          </ul>
+          <p class="lede">Software runs — and once it runs, <em>people depend on it</em>. Three concrete things you gain when your code is FAIR:</p>
+          <div class="card accent-y">
+            <h4>① Citations &amp; credit</h4>
+            <p>A DOI makes your software <em>citable like a paper</em>. Every downstream study that runs your code shows up in your ORCID profile, CrossRef, Google Scholar.</p>
+          </div>
+          <div class="card accent-o mt">
+            <h4>② Reproducibility on a timescale of <em>years</em></h4>
+            <p>Pinned deps + an archived snapshot means the paper figures you generated in 2026 can still be regenerated in 2034. Reviewers, funders, and future-you all benefit.</p>
+          </div>
+          <div class="card accent-p mt">
+            <h4>③ Collaboration without email</h4>
+            <p>A stranger can <code>pip install</code> your code, run an example, and open a pull request — without asking you for a zip file. Contribution ≈ free.</p>
+          </div>
         </div>
         <div class="col">
-          <h3>Software · dynamic</h3>
-          <ul>
-            <li><strong>Executes</strong> — needs an environment that still works.</li>
-            <li><strong>Depends</strong> on other software that also moves.</li>
-            <li><strong>Versions</strong> at multiple granularities (concept + release).</li>
-            <li><strong>Rots</strong> — unmaintained code breaks without being touched.</li>
-          </ul>
+          <h3>But software isn't "just another dataset"</h3>
+          <table class="compare">
+            <thead><tr><th>Data · static</th><th>Software · dynamic</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Bytes at rest</td>
+                <td><strong>Executes</strong> — needs an environment</td>
+              </tr>
+              <tr>
+                <td>Linear snapshots</td>
+                <td><strong>Depends</strong> on other moving software</td>
+              </tr>
+              <tr>
+                <td>Immutability is a feature</td>
+                <td><strong>Versions</strong> at many granularities</td>
+              </tr>
+              <tr>
+                <td>Described by metadata, done</td>
+                <td><strong>Rots</strong> — breaks without being touched</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout blue mt">
+            Hence <strong>FAIR4RS</strong> — the RDA-endorsed re-interpretation of FAIR where every letter is rewritten for things that <em>run</em>.
+          </div>
+          <p class="small muted">Chue Hong et al., <em>FAIR Principles for Research Software</em>, RDA, 2022. <a href="https://doi.org/10.15497/RDA00068">doi.org/10.15497/RDA00068</a></p>
         </div>
-      </div>
-
-      <div class="callout mt">
-        Hence <strong>FAIR4RS</strong> — the <em>FAIR Principles for Research Software</em> (RDA, 2022): a re-interpretation of FAIR where every letter is rewritten for things that run.
       </div>
       <div class="slide-footer"><span class="fair">NFDI4ING · RDM Basics 4</span><span>Why FAIR4RS</span></div>
     </section>
