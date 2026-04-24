@@ -1579,17 +1579,17 @@ jobs:
             <li>Concept + version DOI on Zenodo</li>
             <li><code>CITATION.cff</code> at root</li>
             <li><code>codemeta.json</code> JSON-LD</li>
-            <li>Indexed by at least one registry</li>
+            <li>Indexed by at least one registry (Betty Engine, PyPI, …)</li>
           </ul>
         </div>
         <div class="col A">
           <div class="letter">A</div>
           <h4>Accessible</h4>
           <ul>
-            <li>Public git clone / pip install</li>
-            <li>HTTPS or other open protocol</li>
-            <li>Auth only where strictly needed</li>
-            <li>Software Heritage snapshot</li>
+            <li>Installable: <code>pip install</code> via GitHub or PyPI</li>
+            <li><code>pyproject.toml</code> with PEP 621 metadata</li>
+            <li>HTTPS + git (open protocols, no login walls)</li>
+            <li>Software Heritage + Zenodo snapshot</li>
           </ul>
         </div>
         <div class="col I">
@@ -1597,19 +1597,19 @@ jobs:
           <h4>Interoperable</h4>
           <ul>
             <li>Open formats (HDF5, CSV, OpenAPI)</li>
-            <li>ORCID / SPDX / ROR / PyPI URIs</li>
-            <li>Terminology-Service keywords</li>
-            <li>Pinned qualified dependencies</li>
+            <li>Qualified references: ORCID, SPDX, ROR, PyPI, Wikidata URIs</li>
+            <li>Pinned dependencies with version constraints</li>
+            <li>Standard package structure + standard metadata</li>
           </ul>
         </div>
         <div class="col R">
           <div class="letter">R</div>
           <h4>Reusable</h4>
           <ul>
-            <li><code>LICENSE</code> with SPDX id</li>
-            <li><code>CHANGELOG.md</code> + conventional commits</li>
-            <li>Lockfile or Dockerfile</li>
-            <li>CI smoke test + RDMO SMP</li>
+            <li><code>LICENSE</code> (SPDX id) + README + examples</li>
+            <li><code>CHANGELOG.md</code> + conventional commits + semver tags</li>
+            <li>CI green badge + RDMO Software Management Plan</li>
+            <li>RO-Crate packaging for reproducibility across time</li>
           </ul>
         </div>
       </div>
