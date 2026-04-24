@@ -1031,33 +1031,31 @@ dependencies:
       <div class="slide-header"><span class="brand">Interoperable</span><span class="chip">I2 · Pinned deps</span></div>
       <h1>Dependencies are <em>also</em> qualified references<span class="fair-pill I">I2</span></h1>
 
-      <div class="two-col mt">
+      <div class="two-col wide-right mt">
         <div class="col">
-          <div class="artefact">
-            <div class="file-head"><span>pyproject.toml · excerpt</span><span class="dots">PEP 621</span></div>
-            <pre><code class="language-toml">[project]
-name = "awesome-sim"
-version = "1.1.0"
-requires-python = ">=3.11"
-dependencies = [
-  "numpy&gt;=1.26,&lt;2.0",
-  "matplotlib&gt;=3.8",
-  "pillow&gt;=10.0",
-]
-[project.optional-dependencies]
-dev = ["pytest&gt;=8.0", "ruff&gt;=0.6"]</code></pre>
+          <h3>Unqualified dependency</h3>
+          <div class="artefact" style="margin-top: 8px;">
+            <div class="file-head"><span>❌ ambiguous</span><span class="dots">• • •</span></div>
+            <pre><code class="language-toml">dependencies = ["numpy"]</code></pre>
           </div>
+          <p class="small muted">"I depend on numpy." But which version? Today's? Next year's? If numpy 3.0 breaks my code and someone installs it, whose fault is it?</p>
+
+          <h3 class="mt">Qualified dependency</h3>
+          <div class="artefact" style="margin-top: 8px;">
+            <div class="file-head"><span>✓ specific</span><span class="dots">• • •</span></div>
+            <pre><code class="language-toml">dependencies = ["numpy&gt;=1.26,&lt;2.0"]</code></pre>
+          </div>
+          <p class="small muted">"I depend on numpy, specifically in this API-stable range." That's a promise. A machine can check it. A future reuser knows the constraint.</p>
         </div>
         <div class="col">
-          <h3>Each specifier is a contract</h3>
-          <ul>
-            <li><code>numpy&gt;=1.26,&lt;2.0</code> — API-stable range.</li>
-            <li><code>requires-python&gt;=3.11</code> — interpreter contract.</li>
-            <li>PEP 621 is <strong>a public standard</strong>, so any packaging tool (pip, uv, poetry, hatch) reads it the same way.</li>
-          </ul>
-          <div class="callout blue mt">
-            In Practical 3 we'll deliberately <strong>remove the upper bound</strong> on <code>numpy</code> and watch the reusability story crack.
-          </div>
+          <h3>This is I2 because</h3>
+          <ol class="small">
+            <li><strong>It's a reference</strong> → Points to something external (numpy package on PyPI)</li>
+            <li><strong>It's qualified</strong> → With precise version constraints</li>
+            <li><strong>It's from a maintained authority</strong> → PyPI hosts numpy; the version numbers are real and resolvable</li>
+            <li><strong>It's machine-readable</strong> → Any packaging tool (pip, uv, poetry, hatch) understands <code>&gt;=1.26,&lt;2.0</code></li>
+          </ol>
+          <p class="small muted mt">PEP 621 is a public standard, so every tool reads it the same way. No ambiguity.</p>
         </div>
       </div>
       <div class="slide-footer"><span class="fair">Block 3 · Interoperable</span><span>I2 · pyproject.toml</span></div>
