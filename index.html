@@ -1492,37 +1492,38 @@ jobs:
 
       <ol class="task-list">
         <li>Log in to <a href="https://jupyter.nfdi4ing.de">jupyter.nfdi4ing.de</a> and open a terminal in your notebook.</li>
-        <li>Clone awesome-sim and explore its structure. Examine <code>ro-crate-metadata.json</code> (if present) — this is the RO-Crate manifest.</li>
-        <li>Inspect what the manifest captures: authors (with ORCID), license (SPDX), dependencies, documentation links, data, examples, execution environment.</li>
-        <li>Using <code>rocrate-py</code> (or the web interface), create a minimal RO-Crate of awesome-sim: code + README + requirements + LICENSE + example output.</li>
-        <li>Export the crate as a <code>.zip</code> file. This is now portable: runnable in Jupyter, Docker, a future researcher's laptop.</li>
+        <li>Clone awesome-sim. In a Python notebook cell, run <code>pip install rocrate</code>.</li>
+        <li>Use the <code>rocrate</code> library to create a minimal RO-Crate of awesome-sim: add code directory, README.md, LICENSE, pyproject.toml, and an example output file.</li>
+        <li>Add metadata: author ORCID, license (SPDX), description. See the code example on this slide for the pattern.</li>
+        <li>Call <code>crate.write("awesome-sim-crate/")</code> to generate the RO-Crate directory. Inspect the generated <code>ro-crate-metadata.json</code> — this is what rocrate created for you.</li>
       </ol>
 
       <div class="artefact mt">
-        <div class="file-head"><span>ro-crate-metadata.json · excerpt</span><span class="dots">RO-Crate 1.1</span></div>
-        <pre><code class="language-json">{
-  "@context": "https://w3id.org/ro/crate/1.1/context",
-  "@graph": [
-    {
-      "@id": "ro-crate-metadata.json",
-      "@type": "CreativeWork",
-      "about": {"@id": "./"}
-    },
-    {
-      "@id": "./",
-      "@type": "Dataset",
-      "name": "awesome-sim",
-      "author": {"@id": "https://orcid.org/0000-0002-7121-6816"},
-      "license": "https://spdx.org/licenses/MIT",
-      "hasPart": [
-        {"@id": "src/awesome_sim/"},
-        {"@id": "README.md"},
-        {"@id": "environment.yml"}
-      ]
-    }
-  ]
-}</code></pre>
+        <div class="file-head"><span>rocrate-py · create your crate</span><span class="dots">Python</span></div>
+        <pre><code class="language-python">from rocrate.rocrate import ROCrate
+from rocrate.model.person import Person
+
+# Create a new RO-Crate
+crate = ROCrate()
+
+# Add awesome-sim code
+crate.add_file("src/awesome_sim/")
+crate.add_file("README.md")
+crate.add_file("environment.yml")
+
+# Add author
+author = Person(crate, "https://orcid.org/0000-0002-7121-6816")
+author.name = "Vasiliy Seibert"
+
+# Set metadata
+crate.name = "awesome-sim"
+crate.author = [author]
+crate.license = "https://spdx.org/licenses/MIT"
+
+# Save
+crate.write("awesome-sim-crate/")</code></pre>
       </div>
+      <p class="small muted mt"><strong>Documentation:</strong> <a href="https://pypi.org/project/rocrate/">rocrate on PyPI</a> — install with `pip install rocrate`, then use the API to add files, authors, metadata. The library generates the RO-Crate structure for you.</p>
       <div class="slide-footer"><span class="fair">Block 6 · Practical 3</span><span>RO-Crate</span></div>
     </section>
 
