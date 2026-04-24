@@ -994,34 +994,33 @@ dependencies:
       <div class="two-col wide-right mt">
         <div class="col">
           <h3>The ambiguity problem</h3>
-          <p>Three researchers tag their work with <code>"porous media"</code>:</p>
+          <p>Two researchers tag their code with <code>"heat diffusion"</code>:</p>
           <ul class="small">
-            <li><strong>Geologist:</strong> rock with tiny holes for water flow</li>
-            <li><strong>Material scientist:</strong> synthetic foam with controlled pores</li>
-            <li><strong>Microfluidics engineer:</strong> membranes for filtration</li>
+            <li><strong>Physicist:</strong> the heat equation (PDE) — a mathematical model</li>
+            <li><strong>Materials engineer:</strong> thermal diffusion — a physical process in solids</li>
           </ul>
-          <p class="small muted mt">They're solving <em>different</em> problems with the same English word. A student searching "porous media" gets noise, not signal.</p>
+          <p class="small muted mt">Same two words. Different concepts. A colleague searching "heat diffusion" gets both, can't tell them apart.</p>
 
           <h3 class="mt">The credit problem</h3>
-          <p>Free-text keywords implicitly say: <em>"I invented this concept."</em> But you didn't. The <strong>Allotrope Foundation, ISO, IEC</strong> already defined it carefully.</p>
-          <p class="small muted mt">A URI says: <em>"Here is the official definition from the authority. This is what I mean."</em> That's honest.</p>
+          <p>Free-text keywords implicitly say: <em>"I invented this concept."</em> But you didn't. <strong>Wikidata, ISO, domain ontologies</strong> already defined it carefully.</p>
+          <p class="small muted mt">A URI says: <em>"Here is the official definition from the authority. This is exactly what I mean."</em> That's honest scholarship.</p>
 
           <div class="backref mt">← Lecture 3 · controlled vocabularies for data</div>
         </div>
         <div class="col">
-          <div class="service-chip term"><span class="dot"></span> NFDI4ING · Terminology Service</div>
+          <div class="service-chip term"><span class="dot"></span> Wikidata · Global terminology service</div>
           <div class="artefact mt">
-            <div class="file-head"><span>terminology.nfdi4ing.de · search result</span><span class="dots">porous media (geological)</span></div>
+            <div class="file-head"><span>wikidata.org · Heat equation</span><span class="dots">Q7373601</span></div>
             <pre><code class="language-json">{
-  "term": "porous media",
-  "uri":  "http://purl.allotrope.org/ontologies/GEO_12345",
-  "source": "AFO",
-  "definition": "Rock or sediment with interconnected voids...",
-  "language": "en"
+  "label": "heat equation",
+  "id": "Q7373601",
+  "url": "https://www.wikidata.org/wiki/Q7373601",
+  "description": "parabolic partial differential equation",
+  "aliases": ["diffusion equation", "heat PDE"]
 }</code></pre>
           </div>
-          <p class="small muted mt" style="margin-top: 12px;"><strong>Each concept gets a unique URI.</strong> Geologist, material scientist, and engineer each use a <em>different</em> URI. No collision. Precise search results.</p>
-          <a href="https://terminology.nfdi4ing.de/ts/" class="chip-link gh">terminology.nfdi4ing.de/ts/</a>
+          <p class="small muted mt" style="margin-top: 12px;"><strong>Each concept gets a unique, resolvable URI.</strong> A physicist links to Q7373601 (the PDE). A materials engineer links to a different concept for thermal transport. No collision. Precise.</p>
+          <a href="https://www.wikidata.org/" class="chip-link gh">wikidata.org</a>
           <p class="small muted mt">In Practical 2 you will look up such a URI and paste it into <code>awesome-sim/codemeta.json</code> as a <code>keywords</code> entry.</p>
         </div>
       </div>
