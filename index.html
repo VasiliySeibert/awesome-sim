@@ -1112,9 +1112,9 @@ dependencies = [
     <!-- 4.0 · Divider -->
     <section class="divider">
       <div class="num">04</div>
-      <h1>Practical 2 · Describe research software</h1>
+      <h1>Practical 2 · Test interoperability</h1>
       <div class="rule"></div>
-      <div class="lede">Experience interoperability from the <em>producer</em> side — make machine-readable claims about your software.</div>
+      <div class="lede">Can you actually <em>run</em> a stranger's software — and does it break when dependencies change?</div>
       <div class="fair-badges">
         <span class="b">F</span><span class="b">A</span>
         <span class="b on">I</span>
@@ -1124,47 +1124,46 @@ dependencies = [
 
     <!-- 4.1 · Task list -->
     <section class="content">
-      <div class="slide-header"><span class="brand">Practical 2 · Describe</span><span class="chip">14 min · hands-on</span></div>
-      <div class="service-chip term"><span class="dot"></span> NFDI4ING · Terminology Service + awesome-sim</div>
-      <h1>Extend <code>codemeta.json</code> with qualified terms</h1>
+      <div class="slide-header"><span class="brand">Practical 2 · Test interoperability</span><span class="chip">14 min · hands-on</span></div>
+      <div class="service-chip jup"><span class="dot"></span> NFDI4ING · Jupyter Service</div>
+      <h1>Install, run, break, understand</h1>
 
       <ol class="task-list">
-        <li>Open <code>awesome-sim/CITATION.cff</code> and <code>codemeta.json</code> on GitHub. In pairs, read them aloud and list every <em>qualified</em> reference (ORCID, SPDX, ROR, Zenodo DOI, PyPI URL).</li>
-        <li>Go to <a href="https://terminology.nfdi4ing.de/ts/">terminology.nfdi4ing.de/ts/</a>. Look up URIs for <strong>2–3 domain terms</strong> — e.g. <em>finite volume method</em>, <em>porous media</em>, <em>Darcy flow</em>. Copy each URI.</li>
-        <li>In a <strong>forked</strong> copy of <code>awesome-sim</code> (or via GitHub's web editor), extend <code>codemeta.json</code> with a <code>keywords</code> / <code>applicationCategory</code> block that references those URIs.</li>
-        <li>Commit. Open the repo sidebar → <strong>"Cite this repository"</strong> → generate BibTeX / APA. Confirm that the metadata you just added flows through.</li>
+        <li>Log in to <a href="https://jupyter.nfdi4ing.de">jupyter.nfdi4ing.de</a> and launch a fresh Python notebook.</li>
+        <li>Install the pinned release:<br><code>pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"</code> — notice this pins a specific git tag with qualified, constrained versions.</li>
+        <li>In a new cell, run the 6-line quick-start from the README; inspect the heatmap output.</li>
+        <li><strong>Break interoperability:</strong> in a new cell, run <code>import numpy; print(numpy.__version__)</code>. Note the version. Then in your environment, try to understand: what would happen if this version constraint (numpy>=1.26,<2.0) didn't exist?</li>
       </ol>
-      <div class="slide-footer"><span class="fair">Block 4 · Practical 2</span><span>Terminology Service</span></div>
+
+      <div class="artefact mt">
+        <div class="file-head"><span>notebook cell · the minimal run</span><span class="dots">Python 3.11</span></div>
+        <pre><code class="language-python">from awesome_sim import HeatDiffusion2D
+from awesome_sim.viz import plot_snapshot
+
+sim = HeatDiffusion2D(nx=200, ny=200, alpha=1e-2, dt=5e-5)
+sim.run(500)
+plot_snapshot(sim.u, "out.png", title=f"t = {sim.t:.4f}")</code></pre>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 4 · Practical 2</span><span>Jupyter Service</span></div>
     </section>
 
     <!-- 4.2 · Reflection -->
     <section class="content">
-      <div class="slide-header"><span class="brand">Practical 2 · Describe</span><span class="chip">Reflection · 2 min</span></div>
-      <h1>Free-form vs constrained · which felt more reliable?</h1>
+      <div class="slide-header"><span class="brand">Practical 2 · Test interoperability</span><span class="chip">Reflection · 2 min</span></div>
+      <h1>Why I2 (qualified dependencies) matters</h1>
 
       <div class="callout blue mt">
-        <strong>Prompt:</strong> Which parts of this description did you have to write <em>freely</em>, and which parts were <em>constrained</em> by a standard (ORCID, SPDX, a vocabulary URI)? Which felt more reliable?
+        <strong>Prompt:</strong> You ran code written by someone else, in an environment you don't control. What made that possible? What would have broken it?
       </div>
 
-      <div class="two-col mt">
-        <div class="col">
-          <h3>Free-form</h3>
-          <ul>
-            <li>Abstract, readme prose, screenshots.</li>
-            <li>Necessary, but not machine-consumable in isolation.</li>
-          </ul>
-        </div>
-        <div class="col">
-          <h3>Constrained &amp; qualified</h3>
-          <ul>
-            <li>ORCID, SPDX, ROR, DOI, PyPI, terminology URI.</li>
-            <li>Each is a <em>promise</em> that the string means exactly one thing.</li>
-          </ul>
-        </div>
+      <div class="three-col mt">
+        <div class="card accent-y"><h4>Pinned versions</h4><p>The repo specifies numpy>=1.26,<2.0. That's I2: a qualified, maintained reference to another software package.</p></div>
+        <div class="card accent-o"><h4>Standard package format</h4><p>pyproject.toml is PEP 621. Every tool reads it the same way. No ambiguity.</p></div>
+        <div class="card accent-p"><h4>Open protocol</h4><p><code>pip install</code> via GitHub works everywhere. No proprietary lock-in.</p></div>
       </div>
       <div class="recap mt">
         <h3>Takeaway</h3>
-        <ul><li>Every <em>sentence</em> you write will rot. Every <em>URI</em> you point to outlives the sentence.</li></ul>
+        <ul><li>Interoperability is not magic. It's: standards + constraints + open protocols.</li></ul>
       </div>
       <div class="slide-footer"><span class="fair">Block 4 · Practical 2</span><span>Reflection</span></div>
     </section>
@@ -1476,52 +1475,74 @@ jobs:
     <!-- 6.0 · Divider -->
     <section class="divider">
       <div class="num">06</div>
-      <h1>Practical 3 · Run &amp; sustain</h1>
+      <h1>Practical 3 · Capture reusability via RO-Crate</h1>
       <div class="rule"></div>
-      <div class="lede">Can you actually <em>run</em> a stranger's software — and make yours runnable by a stranger?</div>
+      <div class="lede">Package your entire research object — code, data, metadata, environment, provenance — for reproducibility across time and tools.</div>
       <div class="fair-badges">
-        <span class="b">F</span><span class="b">A</span><span class="b">I</span>
+        <span class="b">F</span><span class="b">A</span><span class="span class="b">I</span>
         <span class="b on">R</span>
       </div>
     </section>
 
     <!-- 6.1 · Task list -->
     <section class="content">
-      <div class="slide-header"><span class="brand">Practical 3 · Run &amp; sustain</span><span class="chip">14 min · hands-on</span></div>
+      <div class="slide-header"><span class="brand">Practical 3 · RO-Crate</span><span class="chip">14 min · hands-on</span></div>
       <div class="service-chip jup"><span class="dot"></span> NFDI4ING · Jupyter Service</div>
-      <h1>Install, run, break, fix</h1>
+      <h1>Package awesome-sim as a Research Object</h1>
 
       <ol class="task-list">
-        <li>Log in to <a href="https://jupyter.nfdi4ing.de">jupyter.nfdi4ing.de</a> and launch a fresh Python notebook.</li>
-        <li>Install the pinned release:<br><code>pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"</code> — notice this pins a specific git tag, a concrete <strong>R2</strong>.</li>
-        <li>In a new cell, run the 6-line quick-start from the README; inspect the heatmap.</li>
+        <li>Log in to <a href="https://jupyter.nfdi4ing.de">jupyter.nfdi4ing.de</a> and open a terminal in your notebook.</li>
+        <li>Clone awesome-sim and explore its structure. Examine <code>ro-crate-metadata.json</code> (if present) — this is the RO-Crate manifest.</li>
+        <li>Inspect what the manifest captures: authors (with ORCID), license (SPDX), dependencies, documentation links, data, examples, execution environment.</li>
+        <li>Using <code>rocrate-py</code> (or the web interface), create a minimal RO-Crate of awesome-sim: code + README + requirements + LICENSE + example output.</li>
+        <li>Export the crate as a <code>.zip</code> file. This is now portable: runnable in Jupyter, Docker, a future researcher's laptop.</li>
       </ol>
 
       <div class="artefact mt">
-        <div class="file-head"><span>notebook cell · the minimal run</span><span class="dots">Python 3.11</span></div>
-        <pre><code class="language-python">from awesome_sim import HeatDiffusion2D
-from awesome_sim.viz import plot_snapshot
-
-sim = HeatDiffusion2D(nx=200, ny=200, alpha=1e-2, dt=5e-5)
-sim.run(500)
-plot_snapshot(sim.u, "out.png", title=f"t = {sim.t:.4f}")</code></pre>
+        <div class="file-head"><span>ro-crate-metadata.json · excerpt</span><span class="dots">RO-Crate 1.1</span></div>
+        <pre><code class="language-json">{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {"@id": "./"}
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "awesome-sim",
+      "author": {"@id": "https://orcid.org/0000-0002-7121-6816"},
+      "license": "https://spdx.org/licenses/MIT",
+      "hasPart": [
+        {"@id": "src/awesome_sim/"},
+        {"@id": "README.md"},
+        {"@id": "environment.yml"}
+      ]
+    }
+  ]
+}</code></pre>
       </div>
-      <div class="slide-footer"><span class="fair">Block 6 · Practical 3</span><span>Jupyter Service</span></div>
+      <div class="slide-footer"><span class="fair">Block 6 · Practical 3</span><span>RO-Crate</span></div>
     </section>
 
     <!-- 6.2 · Reflection -->
     <section class="content">
-      <div class="slide-header"><span class="brand">Practical 3 · Run &amp; sustain</span><span class="chip">Reflection · 2 min</span></div>
-      <h1>What would have broken this reuse?</h1>
+      <div class="slide-header"><span class="brand">Practical 3 · RO-Crate</span><span class="chip">Reflection · 2 min</span></div>
+      <h1>The R in FAIR4RS · Reusability across time</h1>
 
       <div class="callout blue mt">
-        <strong>Prompt:</strong> What was the <em>smallest</em> thing that would have broken this reuse — a missing license, an unpinned dep, no example, a broken install command? <strong>That</strong> is your first priority in your own repos.
+        <strong>Prompt:</strong> An RO-Crate captures your code, data, metadata, and environment together. Why does this matter for the future? What could break if you <em>didn't</em> package it this way?
       </div>
 
       <div class="three-col mt">
-        <div class="card accent-p"><h4>Missing LICENSE</h4><p>Legal cliff. No-one can reuse, no matter how clear the README.</p></div>
-        <div class="card accent-o"><h4>Unpinned deps</h4><p>Silent breakage months later when a transitive dep drops Python 3.11.</p></div>
-        <div class="card accent-y"><h4>No example</h4><p>People install but bounce off — you lose the citation.</p></div>
+        <div class="card accent-p"><h4>Reproducibility</h4><p>RO-Crate pins the entire execution context: code version, deps, data, env. Run it identically in 2034.</p></div>
+        <div class="card accent-o"><h4>Provenance</h4><p>Metadata (author ORCID, license, citations) travels with the code. Credit is preserved.</p></div>
+        <div class="card accent-y"><h4>Portability</h4><p>Standard format, many tools understand it. Not locked into one platform or archive.</p></div>
+      </div>
+      <div class="recap mt">
+        <h3>Takeaway</h3>
+        <ul><li>R (Reusable) means: future-proofing your research. RO-Crate is the container.</li></ul>
       </div>
       <div class="slide-footer"><span class="fair">Block 6 · Practical 3</span><span>Reflection</span></div>
     </section>
