@@ -1068,7 +1068,6 @@ dependencies:
 
       <div class="two-col wide-right mt">
         <div class="col">
-          <h3>The anatomy</h3>
           <div class="artefact">
             <div class="file-head"><span>pyproject.toml · core sections</span><span class="dots">TOML</span></div>
             <pre><code class="language-toml">[build-system]
@@ -1086,17 +1085,15 @@ dependencies = [
           </div>
         </div>
         <div class="col">
-          <h3>Four steps to installability</h3>
+          <h3>Five steps to pip install</h3>
           <ol class="small">
-            <li><strong>Define build-system</strong> — setuptools reads pyproject.toml</li>
-            <li><strong>Organize code</strong> — `src/awesome_sim/` package layout</li>
-            <li><strong>Add `__init__.py`</strong> — Makes it a Python package</li>
-            <li><strong>Install locally</strong> — `pip install -e .` (editable mode)</li>
+            <li><strong>Create pyproject.toml</strong> — Define build-system, name, version, dependencies, authors, license.</li>
+            <li><strong>Organize code</strong> — Use `src/awesome_sim/` layout; package name matches imports.</li>
+            <li><strong>Add `__init__.py`</strong> — Makes the directory a Python package; export main classes/functions.</li>
+            <li><strong>Install locally</strong> — `pip install -e .` tests installability before publishing; `-e` = editable mode.</li>
+            <li><strong>Publish to PyPI</strong> (optional) — `python -m build` then `twine upload dist/*`; now anyone runs `pip install awesome-sim`.</li>
           </ol>
-          <div class="callout mt">
-            <strong>Result:</strong> <code>pip install awesome-sim</code> works for anyone.
-          </div>
-          <p class="small muted mt">Every packaging tool (pip, uv, poetry, hatch) reads the same pyproject.toml the same way. No ambiguity. That's I2.</p>
+          <p class="small muted mt"><strong>Every packaging tool</strong> (pip, uv, poetry, hatch) reads pyproject.toml the same way. No ambiguity. That's I2.</p>
         </div>
       </div>
       <div class="slide-footer"><span class="fair">Block 3 · Interoperable</span><span>I2 · Distribution</span></div>
