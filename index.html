@@ -989,31 +989,40 @@ dependencies:
     <!-- 3.5 · Terminology service -->
     <section class="content">
       <div class="slide-header"><span class="brand">Interoperable</span><span class="chip">I2 · Vocabularies</span></div>
-      <h1>Controlled vocabularies make "qualified" <em>actually</em> qualified<span class="fair-pill I">I2</span></h1>
+      <h1>Controlled vocabularies eliminate ambiguity · and give credit<span class="fair-pill I">I2</span></h1>
 
       <div class="two-col wide-right mt">
         <div class="col">
-          <p>A URL that <em>looks</em> like an identifier but is actually a 404 helps no-one. FAIR4RS <strong>I2</strong> implicitly demands a <em>resolvable</em> term from a <em>maintained</em> authority.</p>
-          <div class="card accent-o">
-            <h4>Who maintains terms in engineering?</h4>
-            <p>No single registry — many: OntoPort, ENVO, METADATA4ING, IEC, ISO. The NFDI4ING <strong>Terminology Service</strong> federates them.</p>
-          </div>
+          <h3>The ambiguity problem</h3>
+          <p>Three researchers tag their work with <code>"porous media"</code>:</p>
+          <ul class="small">
+            <li><strong>Geologist:</strong> rock with tiny holes for water flow</li>
+            <li><strong>Material scientist:</strong> synthetic foam with controlled pores</li>
+            <li><strong>Microfluidics engineer:</strong> membranes for filtration</li>
+          </ul>
+          <p class="small muted mt">They're solving <em>different</em> problems with the same English word. A student searching "porous media" gets noise, not signal.</p>
+
+          <h3 class="mt">The credit problem</h3>
+          <p>Free-text keywords implicitly say: <em>"I invented this concept."</em> But you didn't. The <strong>Allotrope Foundation, ISO, IEC</strong> already defined it carefully.</p>
+          <p class="small muted mt">A URI says: <em>"Here is the official definition from the authority. This is what I mean."</em> That's honest.</p>
+
           <div class="backref mt">← Lecture 3 · controlled vocabularies for data</div>
         </div>
         <div class="col">
           <div class="service-chip term"><span class="dot"></span> NFDI4ING · Terminology Service</div>
           <div class="artefact mt">
-            <div class="file-head"><span>terminology.nfdi4ing.de · search result</span><span class="dots">porous media</span></div>
+            <div class="file-head"><span>terminology.nfdi4ing.de · search result</span><span class="dots">porous media (geological)</span></div>
             <pre><code class="language-json">{
   "term": "porous media",
-  "uri":  "http://purl.allotrope.org/ontologies/…",
+  "uri":  "http://purl.allotrope.org/ontologies/GEO_12345",
   "source": "AFO",
-  "broader": ["material"],
+  "definition": "Rock or sediment with interconnected voids...",
   "language": "en"
 }</code></pre>
           </div>
+          <p class="small muted mt" style="margin-top: 12px;"><strong>Each concept gets a unique URI.</strong> Geologist, material scientist, and engineer each use a <em>different</em> URI. No collision. Precise search results.</p>
           <a href="https://terminology.nfdi4ing.de/ts/" class="chip-link gh">terminology.nfdi4ing.de/ts/</a>
-          <p class="small muted mt">In Practical 2 you will <em>look up</em> such a URI and paste it into <code>awesome-sim/codemeta.json</code> as a <code>keywords</code> entry.</p>
+          <p class="small muted mt">In Practical 2 you will look up such a URI and paste it into <code>awesome-sim/codemeta.json</code> as a <code>keywords</code> entry.</p>
         </div>
       </div>
       <div class="slide-footer"><span class="fair">Block 3 · Interoperable</span><span>Terminology Service</span></div>
