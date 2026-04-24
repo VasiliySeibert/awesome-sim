@@ -1093,7 +1093,13 @@ dependencies = [
             <li><strong>Install locally</strong> — `pip install -e .` tests installability before publishing; `-e` = editable mode.</li>
             <li><strong>Publish to PyPI</strong> (optional) — `python -m build` then `twine upload dist/*`; now anyone runs `pip install awesome-sim`.</li>
           </ol>
-          <p class="small muted mt"><strong>Every packaging tool</strong> (pip, uv, poetry, hatch) reads pyproject.toml the same way. No ambiguity. That's I2.</p>
+
+          <h3 class="mt">Alternative: Direct from GitHub</h3>
+          <p class="small muted">No PyPI account needed. Pin to a git tag:</p>
+          <div class="artefact" style="margin-top: 6px; margin-bottom: 8px;">
+            <pre><code class="language-bash">pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"</code></pre>
+          </div>
+          <p class="small muted"><strong>Trade-offs:</strong> GitHub is immediate & automatic (push tag → installable); PyPI is discoverable & cached globally. Both are I2: qualified references to a maintained repository.</p>
         </div>
       </div>
       <div class="slide-footer"><span class="fair">Block 3 · Interoperable</span><span>I2 · Distribution</span></div>
