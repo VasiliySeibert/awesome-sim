@@ -1467,6 +1467,42 @@ jobs:
       <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>Recap</span></div>
     </section>
 
+    <!-- 5.8 · RO-Crate: the whole package -->
+    <section class="content">
+      <div class="slide-header"><span class="brand">Reusable</span><span class="chip">RO-Crate · Concept</span></div>
+      <h1>RO-Crate · research object in one container<span class="fair-pill R">R</span></h1>
+
+      <div class="two-col wide-right mt">
+        <div class="col">
+          <h3>What is an RO-Crate?</h3>
+          <p>A <strong>standardized, portable directory structure</strong> that bundles:</p>
+          <ul class="small">
+            <li><strong>Code</strong> — your source files</li>
+            <li><strong>Data</strong> — inputs, examples, outputs</li>
+            <li><strong>Metadata</strong> — authors (ORCID), license (SPDX), description</li>
+            <li><strong>Environment</strong> — dependencies, Python version, system reqs</li>
+            <li><strong>Provenance</strong> — git history, changelog, execution trace</li>
+          </ul>
+          <p class="small muted mt">All wrapped in a machine-readable manifest: <code>ro-crate-metadata.json</code> (JSON-LD).</p>
+        </div>
+        <div class="col">
+          <h3>Why you need it</h3>
+          <div class="card accent-p mt">
+            <h4>Reproducibility</h4>
+            <p>Everything needed to regenerate a figure in 2034 is in one crate. Not scattered across GitHub, Zenodo, supplementary materials, and lost emails.</p>
+          </div>
+          <div class="card accent-o mt">
+            <h4>Portability</h4>
+            <p>Execute the same crate in Jupyter, Docker, your laptop, or an HPC cluster — the metadata tells each system what it needs.</p>
+          </div>
+          <div class="card accent-y mt">
+            <h4>Preservation</h4>
+            <p>Deposit the entire crate on Zenodo or Software Heritage once. Future tools understand RO-Crate structure — your work isn't locked into one archive format.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>RO-Crate · Concept</span></div>
+    </section>
 
     <!-- ===================================================================
          BLOCK 6 · PRACTICAL 3 · RUN & SUSTAIN
