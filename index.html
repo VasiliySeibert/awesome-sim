@@ -1132,7 +1132,11 @@ dependencies = [
         <li>Log in to <a href="https://jupyter.nfdi4ing.de">jupyter.nfdi4ing.de</a> and launch a fresh Python notebook.</li>
         <li>Install the pinned release:<br><code>pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"</code> — notice this pins a specific git tag with qualified, constrained versions.</li>
         <li>In a new cell, run the 6-line quick-start from the README; inspect the heatmap output.</li>
-        <li><strong>Break interoperability:</strong> in a new cell, run <code>import numpy; print(numpy.__version__)</code>. Note the version. Then in your environment, try to understand: what would happen if this version constraint (numpy>=1.26,<2.0) didn't exist?</li>
+        <li><strong>Break interoperability:</strong> in a new cell, run <code>import numpy; print(numpy.__version__)</code>. Note the version. Then in your environment, try to understand: what would happen if this version constraint (numpy>=1.26,<2.0) didn't exist?
+          <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #e0e0e0; font-size: 0.9em; color: #666;">
+            <strong>Alternative Step 4:</strong> Instead of breaking awesome-sim, create your own minimal package: write a function that returns <code>"hello world"</code>, add a <code>pyproject.toml</code> with pinned dependencies (e.g., <code>requests>=2.28,&lt;2.31</code>), push to a git tag, then install it in the Jupyter notebook with <code>pip install "git+&lt;your-repo&gt;@v0.1.0"</code>.
+          </div>
+        </li>
       </ol>
 
       <div class="artefact mt">
