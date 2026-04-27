@@ -150,11 +150,11 @@
         <tbody>
           <tr><td class="mono">0:00–0:03</td><td>Opening &amp; recap</td><td>Theory</td><td>—</td><td>—</td></tr>
           <tr><td class="mono">0:03–0:16</td><td><strong>Findable &amp; Accessible</strong></td><td>Theory</td><td>—</td><td><span class="fair">F1</span><span class="fair">F2</span><span class="fair">F3</span><span class="fair">F4</span><span class="fair">A1</span><span class="fair">A2</span></td></tr>
-          <tr class="practical"><td class="mono">0:16–0:30</td><td>Practical 1 · Discover "Dumux"</td><td>Hands-on</td><td>Betty Research Engine</td><td><span class="fair">F</span><span class="fair">A</span></td></tr>
+          <tr class="practical"><td class="mono">0:16–0:30</td><td>Practical 1 · Discover porous media</td><td>Hands-on</td><td>Betty Research Engine</td><td><span class="fair">F</span><span class="fair">A</span></td></tr>
           <tr><td class="mono">0:30–0:43</td><td><strong>Interoperable</strong></td><td>Theory</td><td>—</td><td><span class="fair">I1</span><span class="fair">I2</span></td></tr>
-          <tr class="practical"><td class="mono">0:43–0:57</td><td>Practical 2 · Describe (CITATION.cff)</td><td>Hands-on</td><td>Terminology Service</td><td><span class="fair">I</span></td></tr>
+          <tr class="practical"><td class="mono">0:43–0:57</td><td>Practical 2 · Test interoperability</td><td>Hands-on</td><td>Jupyter Service</td><td><span class="fair">I</span></td></tr>
           <tr><td class="mono">0:57–1:10</td><td><strong>Reusable</strong></td><td>Theory</td><td>(back-ref RDMO SMP)</td><td><span class="fair">R1</span><span class="fair">R2</span><span class="fair">R3</span></td></tr>
-          <tr class="practical"><td class="mono">1:10–1:24</td><td>Practical 3 · Run &amp; sustain</td><td>Hands-on</td><td>Jupyter Service</td><td><span class="fair">R</span></td></tr>
+          <tr class="practical"><td class="mono">1:10–1:24</td><td>Practical 3 · Capture reusability via RO-Crate</td><td>Hands-on</td><td>Jupyter Service</td><td><span class="fair">R</span></td></tr>
           <tr><td class="mono">1:24–1:30</td><td>Wrap-up, FAIR4RS checklist</td><td>Theory</td><td>—</td><td>—</td></tr>
         </tbody>
       </table>
@@ -694,10 +694,10 @@ resolves even if GitHub is gone.</code></pre>
       <ol class="task-list">
         <li>Open the Betty Research Engine in a new tab. (<a href="https://software.nfdi4ing.de/">software.nfdi4ing.de</a>)</li>
         <li>Log in via <strong>GitHub OAuth</strong> — notice <code>A1.2</code> in action.</li>
-        <li>Run the query <code>Dumux</code>.</li>
+        <li>Run the query <code>porous media</code>.</li>
         <li>Sort the result list by <strong>citations (descending)</strong>.</li>
         <li>Export the full result set as a <code>.json</code> file.</li>
-        <li>Open the JSON in a text editor and inspect the metadata fields <em>per entry</em> — which fields did DuMux fill in that let it rank first?</li>
+        <li>Within the search results, find the repository <strong>dumux/dumux</strong>. Open its entry and inspect the metadata fields — which fields does DuMux fill in that let it rank highly?</li>
         <li>Click on the DuMux result. Who cites the dumux/dumux repository? What do those citations tell you about its impact?</li>
       </ol>
       <div class="slide-footer"><span class="fair">Block 2 · Practical 1</span><span>Betty Research Engine</span></div>
@@ -885,7 +885,6 @@ components:
             <li>Affiliation: <strong>ROR</strong> <code>ror.org/03hdw8p89</code> (TU Clausthal).</li>
             <li>Licence: <strong>SPDX URL</strong> <code>spdx.org/licenses/MIT</code>.</li>
             <li>Self-identity: <strong>Zenodo DOI</strong>.</li>
-            <li>In Practical 2 you'll add <strong>NFDI4ING Terminology Service</strong> URIs as domain keywords.</li>
           </ul>
         </div>
       </div>
@@ -1353,9 +1352,6 @@ f4b9b5d docs: describe the mathematical model + hero image
 RUN pip install --no-cache-dir \
     "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"
 ENTRYPOINT ["python", "-m", "awesome_sim.examples.minimal"]</code></pre>
-      </div>
-      <div class="callout blue mt">
-        <strong>Rule of thumb:</strong> the more your software <em>produces a figure in a paper</em>, the closer you should push toward the container end of this spectrum.
       </div>
       <div class="slide-footer"><span class="fair">Block 5 · Reusable</span><span>R2 · Environment</span></div>
     </section>
