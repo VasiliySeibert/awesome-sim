@@ -697,8 +697,8 @@ resolves even if GitHub is gone.</code></pre>
         <li>Run the query <code>porous media</code>.</li>
         <li>Sort the result list by <strong>citations (descending)</strong>.</li>
         <li>Export the full result set as a <code>.json</code> file.</li>
-        <li>Within the search results, find the repository <strong>dumux/dumux</strong>. Open its entry and inspect the metadata fields — which fields does DuMux fill in that let it rank highly?</li>
-        <li>Click on the DuMux result. Who cites the dumux/dumux repository? What do those citations tell you about its impact?</li>
+        <li>Within the search results, find the repository <strong>dumux/dumux</strong>. How many Citations does it have?</li>
+        <li>Click on the DuMux GitHub Repository. How is it linked to zenodo?</li>
       </ol>
       <div class="slide-footer"><span class="fair">Block 2 · Practical 1</span><span>Betty Research Engine</span></div>
     </section>
@@ -1131,10 +1131,9 @@ dependencies = [
       <ol class="task-list">
         <li>Log in to <a href="https://jupyter.nfdi4ing.de">jupyter.nfdi4ing.de</a> and launch a fresh Python notebook.</li>
         <li>Install the pinned release:<br><code>pip install "git+https://github.com/VasiliySeibert/awesome-sim@v1.1.0"</code> — notice this pins a specific git tag with qualified, constrained versions.</li>
-        <li>In a new cell, run the 6-line quick-start from the README; inspect the heatmap output.</li>
-        <li><strong>Break interoperability:</strong> in a new cell, run <code>import numpy; print(numpy.__version__)</code>. Note the version. Then in your environment, try to understand: what would happen if this version constraint (numpy>=1.26,<2.0) didn't exist?
+        <li>In a new cell, run the python code you see below.</li>
+        <li><strong>Break interoperability:</strong> in a new cell, run <code>import numpy; print(numpy.__version__)</code>. Note the version. Then try to understand: what would happen if this version constraint (numpy>=1.26,<2.0) didn't exist?
           <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #e0e0e0; font-size: 0.9em; color: #666;">
-            <strong>Alternative Step 4:</strong> Instead of breaking awesome-sim, create your own minimal package: write a function that returns <code>"hello world"</code>, add a <code>pyproject.toml</code> with pinned dependencies (e.g., <code>requests>=2.28,&lt;2.31</code>), push to a git tag, then install it in the Jupyter notebook with <code>pip install "git+&lt;your-repo&gt;@v0.1.0"</code>.
           </div>
         </li>
       </ol>
